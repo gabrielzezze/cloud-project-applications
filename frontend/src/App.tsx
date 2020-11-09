@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Classes from './css/App.module.css'
 
 const Api = Axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_IP ? process.env.REACT_APP_BACKEND_IP : 'localhost:5000',
+  baseURL: process.env.REACT_APP_BACKEND_IP ? `http://${process.env.REACT_APP_BACKEND_IP}` : 'localhost:5000',
   headers: {
     'Content-Type': 'application/json'
   }
