@@ -23,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve-prod": "http-server ./build -p 8080",
+    "serve-zezze-prod": "http-server ./zezze-build -p 8080",
+    "serve-pedro-prod": "http-server ./pedro-build -p 8080",
     "deploy-prod": "yarn build && yarn run serve-prod"
   },
   "eslintConfig": {
