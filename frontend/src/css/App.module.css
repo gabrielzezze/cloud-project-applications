@@ -1,0 +1,19 @@
+.root {
+    background-color: lightcoral;
+    width: '100%';
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: 'flex';
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    background-color: 'white';
+    border-style: none;
+    width: '30%';
+    padding: 10px;
+}
+
