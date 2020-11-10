@@ -2,14 +2,16 @@ import express from 'express'
 import BodyParser from 'body-parser'
 import { LogRequest } from './middlewares/logging'
 import transactionRouter from './routers/transaction'
+import cors from 'cors'
 
 const app = express()
 
 const env = process.env.NODE_ENV
 const PORT = env === 'development' ? 5001 : 5000
 
-app.use(BodyParser.json())
 
+app.use(BodyParser.json())
+app.use(cors())
 // Middlewares
 app.use(LogRequest)
 
