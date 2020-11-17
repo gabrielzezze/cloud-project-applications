@@ -1,11 +1,8 @@
 import { Router } from "express";
 import { CreateTransaction } from "../controllers/transaction";
 
-const transactionRouter = Router()
+const transactionRouter = Router();
 
-transactionRouter.post(
-    '/',
-    CreateTransaction
-)
+transactionRouter.post("/", CreateTransaction);
 
-export default transactionRouter
+export default transactionRouter;
