@@ -1,4 +1,4 @@
-const ip = process.env.ip ? process.env.ip : process.env.IP
+const ip = process.env.ip ? process.env.ip : process.env.DATABASE_IP
 
 if(!ip) console.log('[ERROR] No Ip given')
 
