@@ -1,4 +1,6 @@
-const ip = process.env.ip;
+const ip = process.env.ip ? process.env.ip : process.env.IP
+
+if(!ip) console.log('[ERROR] No Ip given')
 
 module.exports = {
   username: "root",
