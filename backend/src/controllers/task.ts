@@ -1,18 +1,26 @@
 import { NextFunction, Request, Response } from "express";
 const { Tasks } = require("../models");
 
-export function CreateTask(req: Request, res: Response, next: NextFunction) {
+export async function CreateTask(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
   const { title, status } = req.body;
-  Tasks.create({
+  const task = await Tasks.create({
     title,
     status,
   });
-  return res.status(201).json({ status: "ok", message: `${title} added!` });
+  return res.status(201).json(task.dataValues);
 }
 
 export async function GetTask(req: Request, res: Response, next: NextFunction) {
-  const tasks = await Tasks.findAll();
-  return res.status(201).json(tasks.map((t) => t.dataValues));
+  try {
+    const tasks = await Tasks.findAll();
+    return res.status(201).json(tasks.map((t) => t.dataValues));
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 export async function DeleteTask(
@@ -36,7 +44,7 @@ export async function PatchTask(
 ) {
   const { id } = req.query;
   const { title, status } = req.body;
-  const tasks = await Tasks.update(
+  await Tasks.update(
     { title, status },
     {
       where: {
@@ -44,6 +52,6 @@ export async function PatchTask(
       },
     }
   );
-  console.log(tasks);
-  return res.status(201).json({ id });
+  const task = await Tasks.findOne({ where: { id } });
+  return res.status(201).json(task.dataValues);
 }
