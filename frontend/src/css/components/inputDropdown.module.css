@@ -1,0 +1,40 @@
+.root {
+    width: 100%;
+    position: absolute;
+    top: -50%;
+    transition: top 0.7s ease-in-out;
+    padding: 1.5% 10%;
+    z-index: 0;
+    background-color: whitesmoke;
+    color: coral;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+.root > div {
+    padding: 0.8em 0;
+    width: 30%;
+}
+
+.root > div > input {
+    border: 1px solid coral;
+    border-radius: 17px;
+    padding: 0.2rem 0.5rem;
+    width: 100%;
+    color: coral;
+    background-color: whitesmoke;
+    font-size: 0.8em;
+}
+
+.show {
+    top: 8.5%;
+}
+
+.root > button {
+    padding: 0.7rem 2rem;
+    border: none;
+    background-color: coral;
+    color: whitesmoke;
+    border-radius: 17px;
+}
