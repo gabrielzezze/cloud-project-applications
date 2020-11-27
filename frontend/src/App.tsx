@@ -6,8 +6,8 @@ import Header from './components/Header'
 import InputDropdown from './components/InputDropdown'
 
 const Api = Axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_IP
-    ? `http://${process.env.REACT_APP_BACKEND_IP}`
+  baseURL: process.env.NODE_ENV === 'production'
+    ? `${window.location.host}/api`
     : "http://localhost:5000",
   headers: {
     "Content-Type": "application/json",
