@@ -15,7 +15,7 @@ app.use(cors());
 app.use(LogRequest);
 
 // Routers
-app.use("/task", taskRouter);
+app.use("/api/task", taskRouter);
 
 app.listen(PORT, () => {
   console.log(`[ INFO ] App is ready @ ${PORT} in ${env} mode`);
