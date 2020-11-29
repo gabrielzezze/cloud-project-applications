@@ -7,7 +7,7 @@ import InputDropdown from './components/InputDropdown'
 
 const Api = Axios.create({
   baseURL: process.env.NODE_ENV === 'production'
-    ? `${window.location.host}/api`
+    ? `/api`
     : "http://localhost:5000",
   headers: {
     "Content-Type": "application/json",
