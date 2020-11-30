@@ -3,11 +3,22 @@ const password = process.env.DATABASE_PASSWORD ? process.env.DATABASE_PASSWORD :
 
 if(!ip) console.log('[ERROR] No Ip given')
 
+// module.exports = {
+//   username: "root",
+//   password: password,
+//   database: "Cloud",
+//   host: ip,
+//   port: "80",
+//   dialect: "mysql",
+// };
+
 module.exports = {
-  username: "root",
-  password: password,
+  username: "megadados",
+  password: 'megadados',
   database: "Cloud",
-  host: ip,
-  port: "80",
+  host: '127.0.0.1',
+  port: "3306",
   dialect: "mysql",
 };
+
+
