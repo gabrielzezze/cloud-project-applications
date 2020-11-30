@@ -5,15 +5,32 @@ import {
   GetTask,
   PatchTask,
 } from "../controllers/task";
+import { AuthenticateUser } from "../middlewares/authentication/authentication";
 
 const taskRouter = Router();
 
-taskRouter.post("/", CreateTask);
+taskRouter.post(
+  "/", 
+  (req, res, next) => AuthenticateUser(req, res, next),
+  CreateTask
+);
 
-taskRouter.get("/", GetTask);
+taskRouter.get(
+  "/",
+  (req, res, next) => AuthenticateUser(req, res, next),
+  GetTask
+);
 
-taskRouter.delete("/", DeleteTask);
+taskRouter.delete(
+  "/",
+  (req, res, next) => AuthenticateUser(req, res, next),
+  DeleteTask
+);
 
-taskRouter.patch("/", PatchTask);
+taskRouter.patch(
+  "/",
+  (req, res, next) => AuthenticateUser(req, res, next),
+  PatchTask
+);
 
 export default taskRouter;

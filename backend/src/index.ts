@@ -3,6 +3,7 @@ import BodyParser from "body-parser";
 import { LogRequest } from "./middlewares/logging";
 import cors from "cors";
 import taskRouter from "./routers/task";
+import userRouter from './routers/user'
 
 const app = express();
 
@@ -16,6 +17,8 @@ app.use(LogRequest);
 
 // Routers
 app.use("/api/task", taskRouter);
+app.use("/api/user", userRouter);
+
 
 app.listen(PORT, () => {
   console.log(`[ INFO ] App is ready @ ${PORT} in ${env} mode`);
